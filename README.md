@@ -1,4 +1,6 @@
-# Al-Qur'anic Academy — Monorepo
+# Ahmad Online Quran — Monorepo
+
+Marketing site and future apps for **Ahmad Online Quran** ([ahmadonlinequran.com](https://ahmadonlinequran.com)) — online one-to-one Quran classes with **Hafez Mawlana Mufti Saiful Islam** (Dhaka, Bangladesh).
 
 Single root `package.json` and hoisted `node_modules` for all apps.
 
@@ -22,19 +24,26 @@ Open [http://localhost:3000](http://localhost:3000) for the web app.
 
 ## Environment variables (web)
 
-Copy `apps/web/.env.example` to `apps/web/.env.local` and set:
+Copy `apps/web/.env.example` to `apps/web/.env` (or `.env.local`) and set:
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `NEXT_PUBLIC_SITE_URL` | Yes (production) | Canonical site URL, e.g. `https://yourdomain.com` |
+| `NEXT_PUBLIC_SITE_URL` | Yes (production) | Canonical URL, e.g. `https://ahmadonlinequran.com` |
 | `NEXT_PUBLIC_ZOOM_URL` | No | Optional Zoom room link |
 | `NEXT_PUBLIC_GOOGLE_MEET_URL` | No | Optional Google Meet link |
 
-## Content edits
+## Site content (web)
 
-- **Price:** `apps/web/src/config/pricing.ts`
-- **Schedule days:** `apps/web/src/config/schedule.ts` — fill `days` arrays
-- **Teacher photo:** add `public/brand/teacher.jpg` and update `Instructor.tsx` if needed
+Most public copy, contact, and links live in one place:
+
+| What | File |
+|------|------|
+| Site name, teacher, phone, Facebook, location | `apps/web/src/config/site.ts` |
+| Price | `apps/web/src/config/pricing.ts` |
+| Schedule days | `apps/web/src/config/schedule.ts` |
+| Brand images | `apps/web/public/brand/` (`logo.png`, `hero-section.png`, `teacher.png`) |
+
+**WhatsApp:** +880 1760-427383 · **Facebook:** [facebook.com/ahmadonlinequran](https://www.facebook.com/ahmadonlinequran)
 
 ## Scripts (root)
 

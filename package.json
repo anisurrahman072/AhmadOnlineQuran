@@ -1,5 +1,5 @@
 {
-  "name": "al-quranic-academy",
+  "name": "ahmadonlinequran",
   "private": true,
   "scripts": {
     "dev": "pnpm --filter web dev",

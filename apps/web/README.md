@@ -1,30 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ahmad Online Quran — Web
 
-## Getting Started
+Next.js 15 marketing site for [ahmadonlinequran.com](https://ahmadonlinequran.com).
 
-First, run the development server:
+**Instructor:** Hafez Mawlana Mufti Saiful Islam · **Location:** Dhaka, Bangladesh · **WhatsApp:** +880 1760-427383
+
+## Development
+
+From the repo root:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Or from this directory:
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm build
+pnpm start
+```
 
-## Learn More
+## Configuration
 
-To learn more about Next.js, take a look at the following resources:
+- **`.env`** — set `NEXT_PUBLIC_SITE_URL=https://ahmadonlinequran.com` for production SEO and canonical URLs (see `.env.example`).
+- **`src/config/site.ts`** — site name, teacher names (English/Bangla), location, phone, Facebook.
+- **`src/config/pricing.ts`** / **`src/config/schedule.ts`** — pricing and class schedule.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Brand assets: `public/brand/` (logo, hero graphic, teacher photo).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Stack
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js App Router, Tailwind CSS v4, Framer Motion, shadcn/ui components.
