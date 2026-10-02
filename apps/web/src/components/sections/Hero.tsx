@@ -44,23 +44,24 @@ function FadeUp({
 function HeroImageBlock() {
   const reduce = useReducedMotion();
   const inner = (
-    <div
-      className="relative h-full min-h-[28rem] w-full max-w-md overflow-hidden rounded-xl lg:ml-auto"
-      style={{
-        clipPath: "polygon(50% 0%, 100% 15%, 100% 100%, 0% 100%, 0% 15%)",
-        boxShadow: "0 0 60px rgba(168, 134, 74, 0.22)",
-        border: "2px solid rgba(168, 134, 74, 0.45)",
-      }}
-    >
-      <Image
-        src="/brand/hero-section.png"
-        alt={`${site.name} — official branding`}
-        fill
-        priority
-        fetchPriority="high"
-        sizes="(max-width: 1024px) 100vw, 420px"
-        className="object-contain bg-[#0d0f0e] p-2"
-      />
+    <div className="relative mx-auto aspect-square w-full max-w-[22rem] lg:ml-auto lg:max-w-md">
+      <div
+        className="relative h-full w-full overflow-hidden rounded-full"
+        style={{
+          boxShadow: "0 0 60px rgba(168, 134, 74, 0.28)",
+          border: "3px solid rgba(168, 134, 74, 0.55)",
+        }}
+      >
+        <Image
+          src="/brand/logo.png"
+          alt={`${site.name} logo`}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="(max-width: 1024px) 80vw, 420px"
+          className="object-cover"
+        />
+      </div>
     </div>
   );
   if (reduce) {
@@ -89,7 +90,7 @@ export function Hero() {
       <HeroLanternDecor />
       <div
         className="absolute inset-0 bg-hero bg-cover bg-center bg-no-repeat opacity-20 lg:hidden"
-        style={{ backgroundImage: "url('/brand/hero-section.png')" }}
+        style={{ backgroundImage: "url('/brand/logo.png')" }}
         aria-hidden
       />
       <div className="absolute inset-0 bg-primary/80 lg:hidden" aria-hidden />

@@ -33,10 +33,10 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <Image
                 src="/brand/logo.png"
-                alt=""
-                width={40}
-                height={40}
-                className="rounded-full border border-gold/40"
+                alt={`${site.name} logo`}
+                width={48}
+                height={48}
+                className="rounded-full border border-gold/50 object-cover"
               />
               <span className="font-heading text-xl text-gold">{site.name}</span>
             </div>

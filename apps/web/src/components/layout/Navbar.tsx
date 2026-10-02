@@ -26,6 +26,23 @@ const links = [
   { href: "#contact", label: "Contact" },
 ] as const;
 
+function BrandLogo({ size = 40 }: { size?: number }) {
+  return (
+    <span
+      className="relative shrink-0 overflow-hidden rounded-full border border-gold/50 bg-black"
+      style={{ width: size, height: size }}
+    >
+      <Image
+        src="/brand/logo.png"
+        alt=""
+        width={size}
+        height={size}
+        className="size-full object-contain p-0.5"
+      />
+    </span>
+  );
+}
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -51,19 +68,8 @@ export function Navbar() {
           href="/#top"
           className="group flex min-h-[44px] min-w-0 max-w-full flex-1 items-center gap-2 sm:flex-initial"
         >
-          <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-gold/40">
-            <Image
-              src="/brand/logo.png"
-              alt=""
-              width={40}
-              height={40}
-              className="object-cover"
-            />
-          </span>
+          <BrandLogo size={44} />
           <span className="min-w-0 font-heading text-base font-semibold leading-tight text-white sm:text-lg md:text-xl">
-            <span aria-hidden className="mr-0.5 text-gold sm:mr-1">
-              ☪
-            </span>
             {site.name}
           </span>
         </Link>
@@ -112,8 +118,14 @@ export function Navbar() {
               side="right"
               className="border-l-gold/30 bg-primary text-warm"
             >
-              <SheetHeader>
-                <SheetTitle className="text-left text-gold">Menu</SheetTitle>
+              <SheetHeader className="border-b border-gold/20 pb-4">
+                <div className="flex items-center gap-3">
+                  <BrandLogo size={48} />
+                  <SheetTitle className="font-heading text-left text-lg font-semibold text-white">
+                    {site.name}
+                  </SheetTitle>
+                </div>
+                <p className="text-left text-sm text-warm/70">Menu</p>
               </SheetHeader>
               <div className="mt-6 flex flex-col gap-2">
                 {links.map((l) => (
